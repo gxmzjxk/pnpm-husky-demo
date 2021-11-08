@@ -1,0 +1,21 @@
+{
+	"scripts": {
+		"setup": "pnpm i"
+	},
+	"devDependencies": {
+		"eslint": "^8.2.0",
+		"husky": "^4.3.8",
+		"lint-staged": "^11.2.6"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"*.{ts,tsx,js,jsx,mjs,mjsx,cjs,cjsx}": [
+			"eslint --fix --color --cache --quiet",
+			"git add"
+		]
+	}
+}
